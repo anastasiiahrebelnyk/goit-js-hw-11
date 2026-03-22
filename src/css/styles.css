@@ -9,8 +9,9 @@
 @import url('./base.css');
 
 .form {
-  margin-left: 28px;
-  margin-top: 28px;
+  /* margin-left: 28px;
+  margin-top: 28px; */
+margin: 36px auto 32px auto;
 
 }
 
@@ -55,4 +56,50 @@ button {
 
 button:focus, button:hover {
   background-color: #6c8cff;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+max-width: 1134px;
+margin: 0 auto;
+}
+
+.gallery-item {
+  flex-grow: 0;
+  flex-shrink: 0;
+  border: 1px solid #808080;
+  display: flex;
+}
+
+.img-link {
+  
+}
+
+.img {
+  object-fit: cover;
+  height: 156px;
+}
+
+.img-descr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.title-descr {
+  font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 133%;
+    letter-spacing: 0.04em;
+    color: #2e2f42;
+}
+
+.descr-text {
+  font-weight: 400;
+  line-height: 200%;
+}
+.descr {
+  
 }
