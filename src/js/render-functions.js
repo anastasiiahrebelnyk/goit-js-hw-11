@@ -1,4 +1,5 @@
 import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 import { refs } from "../main";
 
 
@@ -15,7 +16,7 @@ export function createGallery(images) {
         
     </div>`).join('');
     refs.galleryEl.insertAdjacentHTML('beforeend', markup);
-    
+    let gallery = new SimpleLightbox ('.img-link')
 };
 
 export function clearGallery() {
@@ -29,3 +30,5 @@ export function showLoader() {
 export function hideLoader() {
     
 };
+
+const box = new SimpleLightbox('.img-link', { /* options */ });
