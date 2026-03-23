@@ -1,7 +1,7 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
-import { getImagesByQuery } from "./js/pixabay-api";
-import { clearGallery, createGallery, hideLoader, showLoader } from "./js/render-functions";
+import { getImagesByQuery } from "./js/pixabay-api.js";
+import { clearGallery, createGallery, hideLoader, showLoader } from "./js/render-functions.js";
 
 export const refs = {
     formEl: document.querySelector('.form'),
@@ -21,7 +21,6 @@ function onSubmit(e) {
     console.log(query);
     
     if (query === '') {
-        hideLoader();
         iziToast.show({
             color: 'red',
             message: 'Sorry, there are no images matching your search query. Please try again!'
@@ -47,7 +46,8 @@ function onSubmit(e) {
         })
         .finally(() => {
             hideLoader();
+            refs.formEl.reset();
         });
-    refs.formEl.reset();
-    // clearGallery();       
+    
+          
 }
