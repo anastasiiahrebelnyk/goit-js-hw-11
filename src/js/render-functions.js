@@ -15,8 +15,9 @@ export function createGallery(images) {
     </ul></a>
         
     </div>`).join('');
+    
     refs.galleryEl.insertAdjacentHTML('beforeend', markup);
-    let gallery = new SimpleLightbox ('.img-link')
+    let gallery = new SimpleLightbox('.img-link');
 };
 
 export function clearGallery() {
@@ -24,11 +25,11 @@ export function clearGallery() {
 };
 
 export function showLoader() {
-    
+    return refs.loader.classList.add('loader');
 };
 
 export function hideLoader() {
-    
+    return refs.loader.classList.remove('loader');
 };
 
 const box = new SimpleLightbox('.img-link', { /* options */ });
