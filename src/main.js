@@ -31,8 +31,15 @@ function onSubmit(e) {
     showLoader();
     
     getImagesByQuery(query)
-        .then(response => {
-            createGallery(response.data.hits);
+        .then(images => {
+            if (images.length === 0) {
+                iziToast.show({
+            color: 'red',
+            message: 'Sorry, there are no images matching your search query. Please try again!'
+                });
+                return
+            }
+            createGallery(images);
         })
         .catch(error => {
             iziToast.show({ message: 'Error' });
